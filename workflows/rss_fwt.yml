@@ -1,0 +1,18 @@
+name: Tweet new RSS Feed items FWTV	
+on:
+  rss:
+    url: 
+      - http://www.focus-wtv.be/feed/kortrijk/rss.xml
+jobs:
+  twitter:
+    name: Post a tweet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post a tweet
+        uses: ethomson/send-tweet-action@v1
+        with:
+          status: ${{ on.rss.outputs.link }} #Kortrijk
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
