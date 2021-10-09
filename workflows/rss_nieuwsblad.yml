@@ -2,7 +2,7 @@ name: Tweet new RSS Feed items FWTV
 on:
   rss:
     url: 
-      - http://www.nieuwsblad.be/rss/section/bf9eeee6-51e0-49e8-ad4a-791dcc2f63ae?intro=1
+      - https://www.nieuwsblad.be/rss/section/160201ec-d703-4a14-881c-03fa77eaea3d
 jobs:
   twitter:
     name: Post a tweet
